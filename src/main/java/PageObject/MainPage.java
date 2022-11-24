@@ -11,7 +11,7 @@ public class MainPage {
     //Кнопка для принятия куки
     By btnCookie = By.id("rcc-confirm-button");
 
-    //Первый вопрос в списке вопросов о важном
+    //Первый вопрос в списке вопросов о важном.
     By btnFAQ1 = By.xpath("/html/body/div/div/div/div[5]/div[2]/div/div[1]");
     //Раскрывающийся ответ на первый вопрос
     By FAQ1Answer = By.xpath("/html/body/div/div/div/div[5]/div[2]/div/div[1]/div[2]/p");

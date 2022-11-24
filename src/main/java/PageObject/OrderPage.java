@@ -12,7 +12,7 @@ public class OrderPage {
         this.driver = driver;
     }
 
-    //Кнопка для принятия куки
+    //Кнопка для принятия куки.
     By btnCookie = By.id("rcc-confirm-button");
 
     //Кнопка "Заказать" расположенная в заголовке сайта
