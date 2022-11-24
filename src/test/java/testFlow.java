@@ -12,36 +12,35 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 @RunWith(Parameterized.class)
 public class testFlow {
 
-        private WebDriver driver;
-        private final String name;
-        private final String family;
-        private final String adress;
-        private final String metroStation;
-        private final String telephoneNumber;
-        private final String rentalDate;
-        private final String comment;
+    private WebDriver driver;
+    private final String name;
+    private final String family;
+    private final String adress;
+    private final String metroStation;
+    private final String telephoneNumber;
+    private final String rentalDate;
+    private final String comment;
 
 
-        public testFlow(String name, String family, String adress, String metroStation, String telephoneNumber, String rentalDate, String comment) {
-            this.name = name;
-            this.family = family;
-            this.adress = adress;
-            this.metroStation = metroStation;
-            this.telephoneNumber = telephoneNumber;
-            this.rentalDate = rentalDate;
-            this.comment = comment;
+    public testFlow(String name, String family, String adress, String metroStation, String telephoneNumber, String rentalDate, String comment) {
+        this.name = name;
+        this.family = family;
+        this.adress = adress;
+        this.metroStation = metroStation;
+        this.telephoneNumber = telephoneNumber;
+        this.rentalDate = rentalDate;
+        this.comment = comment;
 
-        }
+    }
 
-        @Parameterized.Parameters
-        public static Object[][] getCredentials() {
-            return new Object[][]{
-                    {"Иванов", "Иван", "улица Ленина", "Лубянка", "79190125021", "22.11.2022", "очень ждем"},
-                    {"Петров", "Петр", "улица Пушкина", "Сокольники", "79122255963", "20.11.2022", "ждем ждем"},
-            };
+    @Parameterized.Parameters
+    public static Object[][] getCredentials() {
+        return new Object[][]{
+                {"Иванов", "Иван", "улица Ленина", "Лубянка", "79190125021", "22.11.2022", "очень ждем"},
+                {"Петров", "Петр", "улица Пушкина", "Сокольники", "79122255963", "20.11.2022", "ждем ждем"},
+        };
 
-        }
-
+    }
 
 
     @Test
@@ -53,11 +52,10 @@ public class testFlow {
         driver.get("https://qa-scooter.praktikum-services.ru/");
 
 
-
         OrderPage orderPage = new OrderPage(driver);
         orderPage.btnCookieClick();
         orderPage.btnOrderHeadClick();
-        orderPage.setNameToOrder(name,family);
+        orderPage.setNameToOrder(name, family);
         orderPage.setAdressToOrder(adress);
         orderPage.setMetroStationToOrder(metroStation);
         orderPage.setTelephoneNumberToOrder(telephoneNumber);
@@ -81,11 +79,10 @@ public class testFlow {
         driver.get("https://qa-scooter.praktikum-services.ru/");
 
 
-
         OrderPage orderPage = new OrderPage(driver);
         orderPage.btnCookieClick();
         orderPage.btnOrderBodyClick();
-        orderPage.setNameToOrder(name,family);
+        orderPage.setNameToOrder(name, family);
         orderPage.setAdressToOrder(adress);
         orderPage.setMetroStationToOrder(metroStation);
         orderPage.setTelephoneNumberToOrder(telephoneNumber);
@@ -100,7 +97,7 @@ public class testFlow {
     }
 
     @After
-    public void afterTests(){
+    public void afterTests() {
         driver.quit();
     }
 
