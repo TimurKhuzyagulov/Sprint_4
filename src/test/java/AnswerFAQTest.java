@@ -4,7 +4,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import static org.junit.Assert.assertTrue;
 
-//тест для важных вопросов
+//тест для важных вопросов.
 public class AnswerFAQTest {
 
     MainPage mainPage = new MainPage(MainPage.driver);
