@@ -12,54 +12,54 @@ public class OrderPage {
         this.driver = driver;
     }
 
-    //Кнопка для принятия куки
-    By btnCookie = By.id("rcc-confirm-button");
+    //Кнопка для принятия куки...
+    private By btnCookie = By.id("rcc-confirm-button");
 
     //Кнопка "Заказать" расположенная в заголовке сайта
-    By btnOrderHead = By.xpath("/html/body/div/div/div/div[1]/div[2]/button[1]");
+    private By btnOrderHead = By.xpath("/html/body/div/div/div/div[1]/div[2]/button[1]");
     //Кнопка "Заказать" расположенная в теле сайта
-    By btnOrderBody = By.xpath("//*[@id=\"root\"]/div/div/div[4]/div[2]/div[5]/button");
+    private By btnOrderBody = By.xpath("//*[@id=\"root\"]/div/div/div[4]/div[2]/div[5]/button");
 
     //Элементы на странице заказа "Для кого самокат"
-    public By inputName =   By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div[1]/input"); //Имя
-    By inputFamily = By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div[2]/input"); //Фамилия
-    By inputAdress = By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div[3]/input"); //Адрес
-    By inputMetroStation = By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div[4]/div/div/input"); //Станция метро
+    private By inputName = By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div[1]/input"); //Имя
+    private By inputFamily = By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div[2]/input"); //Фамилия
+    private By inputAdress = By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div[3]/input"); //Адрес
+    private By inputMetroStation = By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div[4]/div/div/input"); //Станция метро
 
-    By inputTelephoneNumber = By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div[5]/input"); //номер телефона
+    private By inputTelephoneNumber = By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div[5]/input"); //номер телефона
 
     //Кнопка "Далее" на странице заказа "Для кого самокат"
-    By btnNext = By.xpath("//*[@id=\"root\"]/div/div[2]/div[3]/button");
+    private By btnNext = By.xpath("//*[@id=\"root\"]/div/div[2]/div[3]/button");
 
     //Элементы на странице заказа "Про аренду"
-    By inputRentalDate =   By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div[1]/div/div/input"); //Когда привезти самокат
-    By inputRentalPeriod =  By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div[2]/div"); //Срок аренды
-    By inputColorBlack =   By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div[3]/label[1]"); //Черный цвет
-    By inputColorGray =    By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div[3]/label[2]"); //Серый цвет
-    By inputComment =      By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div[4]/input"); // Комментарий для курьера
+    private By inputRentalDate = By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div[1]/div/div/input"); //Когда привезти самокат
+    private By inputRentalPeriod = By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div[2]/div"); //Срок аренды
+    private By inputColorBlack = By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div[3]/label[1]"); //Черный цвет
+    private By inputColorGray = By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div[3]/label[2]"); //Серый цвет
+    private By inputComment = By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div[4]/input"); // Комментарий для курьера
 
     //Кнопка "Заказать" на странице "Про аренду"
-    By btnOrderCreate = By.xpath("//*[@id=\"root\"]/div/div[2]/div[3]/button[2]");
+    private By btnOrderCreate = By.xpath("//*[@id=\"root\"]/div/div[2]/div[3]/button[2]");
 
     //Кнопка "Да" в окне потдверждения создания Заказа
-    By btnYesCreateOrder = By.xpath("//*[@id=\"root\"]/div/div[2]/div[5]/div[2]/button[2]");
+    private By btnYesCreateOrder = By.xpath("//*[@id=\"root\"]/div/div[2]/div[5]/div[2]/button[2]");
 
     //Заголовок окна-уведомления об успешном создании заказа
-    By textSuccessOrder = By.xpath("//*[@id=\"root\"]/div/div[2]/div[5]/div[1]");
+    private By textSuccessOrder = By.xpath("//*[@id=\"root\"]/div/div[2]/div[5]/div[1]");
 
-    public void btnCookieClick(){
+    public void btnCookieClick() {
         driver.findElement(btnCookie).click();
     }
 
-    public void btnOrderHeadClick(){
+    public void btnOrderHeadClick() {
         driver.findElement(btnOrderHead).click();
     }
 
-    public void btnOrderBodyClick(){
-        driver.findElement(btnOrderHead).click();
+    public void btnOrderBodyClick() {
+        driver.findElement(btnOrderBody).click();
     }
 
-    public void setNameToOrder(String name, String family){
+    public void setNameToOrder(String name, String family) {
         driver.findElement(inputName).sendKeys(name);
         driver.findElement(inputFamily).sendKeys(family);
     }
@@ -68,7 +68,7 @@ public class OrderPage {
         driver.findElement(inputAdress).sendKeys(adress);
     }
 
-    public void setMetroStationToOrder(String metroStation){
+    public void setMetroStationToOrder(String metroStation) {
 
         driver.findElement(inputMetroStation).sendKeys(metroStation);
         driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div[4]/div/div[2]")).click();
@@ -78,36 +78,36 @@ public class OrderPage {
         driver.findElement(inputTelephoneNumber).sendKeys(telephoneNumber);
     }
 
-    public void btnNextClick(){
+    public void btnNextClick() {
         driver.findElement(btnNext).click();
     }
 
-    public void setRentalDateToOrder(String rentalDate){
+    public void setRentalDateToOrder(String rentalDate) {
         driver.findElement(inputRentalDate).sendKeys(rentalDate);
     }
 
-    public void setColorToOrder(){
+    public void setColorToOrder() {
         driver.findElement(inputColorBlack).click();
     }
 
-    public void setRentalPeriod(){
+    public void setRentalPeriod() {
         driver.findElement(inputRentalPeriod).click();
         driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div[2]/div[2]/div[2]")).click();
     }
 
-    public void setCommentToOrder(String comment){
+    public void setCommentToOrder(String comment) {
         driver.findElement(inputComment).sendKeys(comment);
     }
 
-    public void setBtnOrderCreateClick(){
+    public void setBtnOrderCreateClick() {
         driver.findElement(btnOrderCreate).click();
     }
 
-    public void setBtnYesCreateOrder(){
+    public void setBtnYesCreateOrder() {
         driver.findElement(btnYesCreateOrder).click();
     }
 
-    public boolean getDisplayedSuccessOrder(){
+    public boolean getDisplayedSuccessOrder() {
         return driver.findElement(textSuccessOrder).isDisplayed();
     }
 }
